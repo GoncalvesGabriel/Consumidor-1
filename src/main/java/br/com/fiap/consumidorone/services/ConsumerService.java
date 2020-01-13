@@ -1,5 +1,6 @@
 package br.com.fiap.consumidorone.services;
 
+import br.com.fiap.consumidorone.domain.BolsaFamiliaModel;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
@@ -10,13 +11,11 @@ public class ConsumerService {
 
   Map<String, SomaBolsaFamilia> valueMapByUF = new HashMap();
 
-  public void consume(String line) throws Exception {
-    String newLine = line.replace('"', ' ').replace(',', '.');
-    String[] lineParse = newLine.split(";");
-    String uf = lineParse[2].trim();
-    String value = lineParse[7].trim();
-    BigDecimal valor = new BigDecimal(value);
-    if(!valueMapByUF.containsKey(uf)){
+  public void consume(BolsaFamiliaModel model) {
+    String uf = model.getUf();
+    String value = model.getValorParcela();
+    BigDecimal valor = new BigDecimal(value.replace(',', '.'));
+    if(!valueMapByUF.containsKey(uf)) {
         valueMapByUF.put(uf, new SomaBolsaFamilia());
     }
 

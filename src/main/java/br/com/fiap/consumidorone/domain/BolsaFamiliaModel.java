@@ -8,17 +8,17 @@ public class BolsaFamiliaModel {
 
   private String mesCompetencia;
 
-  private String estado;
+  private String uf;
 
-  private String codigoMunicipio;
+  private String codMunicipioSiafi;
 
-  private String municipio;
+  private String nomeMunicipio;
 
-  private String nisFavoricido;
+  private String nisFavorecido;
 
-  private String favorecido;
+  private String nomeFavorecido;
 
-  private BigDecimal valorParcela;
+  private String valorParcela;
 
   public String getMesReferencia() {
     return mesReferencia;
@@ -36,51 +36,51 @@ public class BolsaFamiliaModel {
     this.mesCompetencia = mesCompetencia;
   }
 
-  public String getEstado() {
-    return estado;
+  public String getUf() {
+    return uf;
   }
 
-  public void setEstado(String estado) {
-    this.estado = estado;
+  public void setUf(String uf) {
+    this.uf = uf;
   }
 
-  public String getCodigoMunicipio() {
-    return codigoMunicipio;
+  public String getCodMunicipioSiafi() {
+    return codMunicipioSiafi;
   }
 
-  public void setCodigoMunicipio(String codigoMunicipio) {
-    this.codigoMunicipio = codigoMunicipio;
+  public void setCodMunicipioSiafi(String codMunicipioSiafi) {
+    this.codMunicipioSiafi = codMunicipioSiafi;
   }
 
-  public String getMunicipio() {
-    return municipio;
+  public String getNomeMunicipio() {
+    return nomeMunicipio;
   }
 
-  public void setMunicipio(String municipio) {
-    this.municipio = municipio;
+  public void setNomeMunicipio(String nomeMunicipio) {
+    this.nomeMunicipio = nomeMunicipio;
   }
 
-  public String getNisFavoricido() {
-    return nisFavoricido;
+  public String getNisFavorecido() {
+    return nisFavorecido;
   }
 
-  public void setNisFavoricido(String nisFavoricido) {
-    this.nisFavoricido = nisFavoricido;
+  public void setNisFavorecido(String nisFavorecido) {
+    this.nisFavorecido = nisFavorecido;
   }
 
-  public String getFavorecido() {
-    return favorecido;
+  public String getNomeFavorecido() {
+    return nomeFavorecido;
   }
 
-  public void setFavorecido(String favorecido) {
-    this.favorecido = favorecido;
+  public void setNomeFavorecido(String nomeFavorecido) {
+    this.nomeFavorecido = nomeFavorecido;
   }
 
-  public BigDecimal getValorParcela() {
+  public String getValorParcela() {
     return valorParcela;
   }
 
-  public void setValorParcela(BigDecimal valorParcela) {
+  public void setValorParcela(String valorParcela) {
     this.valorParcela = valorParcela;
   }
 }

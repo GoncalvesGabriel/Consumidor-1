@@ -1,5 +1,6 @@
 package br.com.fiap.consumidorone.components;
 
+import br.com.fiap.consumidorone.domain.BolsaFamiliaModel;
 import br.com.fiap.consumidorone.services.ConsumerService;
 import java.io.IOException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ public class Consumer {
     private ConsumerService service;
 
     @KafkaListener(topics = "${consumerone.topic}", groupId = "br.com.fiap")
-    public void consume(final String consumerRecord) throws IOException {
+    public void consume(final BolsaFamiliaModel consumerRecord) throws IOException {
         try {
             service.consume(consumerRecord);
         } catch (Exception e) {
