@@ -13,12 +13,8 @@ public class Consumer {
     @Autowired
     private ConsumerService service;
 
-    @KafkaListener(topics = "${consumerone.topic}", groupId = "br.com.fiap")
-    public void consume(final BolsaFamiliaModel consumerRecord) throws IOException {
-        try {
+    @KafkaListener(topics = "${consumerone.topic}", groupId = "${consumerone.group-id}")
+    public void consume(final BolsaFamiliaModel consumerRecord) {
             service.consume(consumerRecord);
-        } catch (Exception e) {
-            System.out.println("DEU ERRO: " + consumerRecord );
-        }
     }
 }

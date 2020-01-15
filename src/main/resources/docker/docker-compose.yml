@@ -29,6 +29,9 @@ services:
     networks_mode: host
     deploy:
       replicas: 1
+    environment:
+      KAFKA_HOST: localhost:9092
+      TOPIC_BOLSA: BOLSA_FAMILIA
     depends_on:
       - kafka
   kafka-producer:
@@ -39,6 +42,10 @@ services:
     deploy:
       mode: global
       replicas: 1
+    environment:
+      KAFKA_GROUP_ID: br.com.fiap.consumidorone
+      KAFKA_HOST: localhost:9092
+      TOPIC_BOLSA: BOLSA_FAMILIA
     depends_on:
       - kafka
 networks:
