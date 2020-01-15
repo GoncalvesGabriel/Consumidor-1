@@ -1,0 +1,45 @@
+version: '2'
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    network_mode: host
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 32181
+      ZOOKEEPER_TICK_TIME: 2000
+    extra_hosts:
+      - "moby:127.0.0.1"
+
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    network_mode: host
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: localhost:32181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+    extra_hosts:
+      - "moby:127.0.0.1"
+
+  consumidor-one:
+    image: goncalvesgabrielsilva/consumidor-one:0.0.1-SNAPSHOT
+    ports:
+      - "8080:8080"
+    networks_mode: host
+    deploy:
+      replicas: 1
+    depends_on:
+      - kafka
+  kafka-producer:
+    image: goncalvesgabrielsilva/kafka-producer:0.0.1-SNAPSHOT
+    networks_mode: host
+    ports:
+      - "8081:8080"
+    deploy:
+      mode: global
+      replicas: 1
+    depends_on:
+      - kafka
+networks:
+  trabalho:
