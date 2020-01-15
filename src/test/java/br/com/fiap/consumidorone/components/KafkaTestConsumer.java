@@ -8,8 +8,8 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 import org.springframework.test.context.ActiveProfiles;
 
-@Component
-@ActiveProfiles(value = "test")
+@Component(value = "kafkaConsumer")
+@Profile(value = "test")
 public class KafkaTestConsumer implements Consumer{
 
     public void consume(final BolsaFamiliaModel consumerRecord){
