@@ -7,6 +7,13 @@ Essa aplicação consolida os valores de cada estado presente no arquivo do bols
 
    *[UF] + [somar da parcela] + [qtd de beneficiários]*
 
+### Tecnologias
+- Java
+- Maven
+- Spring boot
+- Kafka
+- Docker
+
 ### Como executar
 
 - Para executar o sistema recomendamos utilizar o docker e o arquivo docker-compose.yml presente no projeto, nesse arquivo além de ter o start dassa aplicação, também inícia o produtor e outros dois consumidores.
@@ -19,4 +26,4 @@ Nesse arquivo é necessário editar as variaveis de path da pasta de localizaç�
 
 ### Executar na IDE
 
-Alterar o arquivo application.properties substituindo as mesmas variáveis que estão definidas no docker-compose.yml que foram mencionadas acima. 
+- Alterar o arquivo application.properties substituindo as mesmas variáveis que estão definidas no docker-compose.yml que foram mencionadas acima. 
