@@ -19,7 +19,7 @@ Essa aplicação consolida os valores de cada estado presente no arquivo do bols
 - Para executar o sistema recomendamos utilizar o docker e o arquivo docker-compose.yml presente no projeto, nesse arquivo além de ter o start dassa aplicação, também inícia o produtor e outros dois consumidores.
 
 #### Configurações do Produtor
-- Para o consumidor devem ser editadas as seguintes variávies no arquivo arquivo docker-compose.yml. 
+- Para o consumidor devem ser editadas as seguintes variávies nos arquivos docker-compose.yml e o .env . 
     - FILE_PATH: Path de acesso ao arquivo do bolsa familia
     - FILE_NAME: Nome do arquivo para o kafka-producer.
     - TOPIC_BOLSA: Nome do topic de onde serão postadas as mensagens. Por default vem com o nome BOLSA_FAMILIA. Deve seguir o mesmo nome que está definido na variavel KAFKA_CREATE_TOPICS da definição da container do kafka. 
